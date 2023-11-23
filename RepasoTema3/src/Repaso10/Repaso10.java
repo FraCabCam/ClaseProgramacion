@@ -28,27 +28,26 @@ public class Repaso10 {
 				nombre[i] = sc.nextLine();
 				for (int j = 0; j < nota.length; j++) {
 
-					System.out.println("Cual es la nota de " + nombre[i] + " para el examen " + (j+1));
+					System.out.println("Cual es la nota de " + nombre[i] + " para el examen " + (j + 1));
 					nota[alumno][j] = sc.nextInt();
 
-					
 				}
-					
+
 			}
-			
+
 			System.out.println("LISTADO DE NOTAS");
 			for (int i = 0; i < nota.length; i++) {
 				for (int j = 0; j < nota.length; j++) {
-					
+
 				}
 				suma += nota[i][3];
 				mediaIndi = suma / 3.0;
-				mediaTotal = (suma /(alumno * 3.0));
+				mediaTotal = (suma / (alumno * 3.0));
 				System.out.println("Alumno: " + nombre[i] + " - Nota Media: " + mediaIndi);
 				mediaIndi = 0.0;
-				
+
 			}
-			 System.out.println("Media de los alumnos: " + mediaTotal);
+			System.out.println("Media de los alumnos: " + mediaTotal);
 		}
 	}
 }
