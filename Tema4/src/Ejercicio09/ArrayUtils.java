@@ -31,5 +31,14 @@ public class ArrayUtils {
 		}
 		return -1;
 	}
+	public static void arrayPalabra(String[] array3, Integer posicion) {
+		String palabra = array3[posicion];
+		System.out.println(palabra);
+		if (posicion < array3.length-1) {
+			arrayPalabra(array3, posicion +1);
+		}
+		
+		
+	}
 
 }

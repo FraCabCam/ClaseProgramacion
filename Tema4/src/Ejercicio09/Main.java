@@ -23,6 +23,10 @@ public class Main {
 		System.out.println(ArrayUtils.buscarPalabra(array,"cabrera"));
 		System.out.println(ArrayUtils.buscarPalabra(array,"llamo"));
 		System.out.println(ArrayUtils.buscarPalabra(array,"patata"));
+		
+		//Ejercicio 14
+		
+		ArrayUtils.arrayPalabra(array, 0);
 	}
 
 }
