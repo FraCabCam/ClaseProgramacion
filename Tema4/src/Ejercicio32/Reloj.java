@@ -9,10 +9,10 @@ public class Reloj {
 	private Boolean formarto24horas;
 
 	public Reloj() {
-		this.horas = 00;
-		this.minutos = 00;
-		this.segundos = 00;
-		this.formarto24horas = true;
+		horas = 0;
+		minutos = 0;
+		segundos = 0;
+		formarto24horas = true;
 	}
 
 	public Reloj(Integer horas, Integer minutos, Integer segundos) {
@@ -40,10 +40,15 @@ public class Reloj {
 	}
 
 	public void ponerEnHora(Integer horas, Integer minutos) {
+		this.horas = horas;
+		this.minutos = minutos;
 		return;
 	}
 
 	public void ponerEnHora(Integer horas, Integer minutos, Integer segundos) {
+		this.horas = horas;
+		this.minutos = minutos;
+		this.segundos = segundos;
 		return;
 	}
 
@@ -52,8 +57,8 @@ public class Reloj {
 	}
 
 	public boolean check() {
-		if ((getHoras() >= 0 && getHoras() <= 23) && (getMinutos() >= 0 && getMinutos() <= 59)
-				&& (getSegundos() >= 0 && getSegundos() <= 59)) {
+		if (getHoras() >= 0 && getHoras() <= 23 && getMinutos() >= 0 && getMinutos() <= 59
+				&& getSegundos() >= 0 && getSegundos() <= 59) {
 			return true;
 		}
 
@@ -62,17 +67,19 @@ public class Reloj {
 
 	@Override
 	public String toString() {
-		if (check() == false) {
+		if (!check()) {
 			return "HORA INCORRECTA";
 		}
-		if (formarto24horas == true) {
-			return horas + ":" + minutos + ":" + segundos;
+		if (formarto24horas || horas <= 12) {
+			return  formatNumber(horas) + ":" + formatNumber(minutos) + ":" + formatNumber(segundos);
 		}
-		if (horas > 12) {
-			return " pm " + (horas - 12) + ":" + minutos + ":" + segundos;
+		 return formatNumber(horas - 12) + ":" + formatNumber(minutos) + ":" + formatNumber(segundos);
+	}
+	private String formatNumber (Integer x) {
+		if (x >= 10) {
+			return x.toString();
 		}
-		return " am " + (horas) + ":" + minutos + ":" + segundos;
-
+		return "0" + x;
 	}
 
 	@Override

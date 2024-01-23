@@ -1,25 +1,21 @@
 package Ejercicio18_19_20;
 
-import java.util.Iterator;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Curso {
 	
 	private Integer identificador;
 	private String descripcion;
-	private Alumno[] alumnos;
+	private List<Alumno> alumnos;
 	
 	
 	
-	public Curso(Integer cantAlumnos) {
-		alumnos = new Alumno[cantAlumnos];
+	public Curso() {
+		alumnos = new ArrayList<>();
 	}
 	public void addAlumno(Alumno alumnoNuevo) {
-		for (int i = 0; i < alumnos.length; i++) {
-			if (alumnos[i] == null) {
-				alumnos[i] = alumnoNuevo;
-				break;
-			}
-		}
+		alumnos.add(alumnoNuevo);
 	}
 	public Integer getIdentificador() {
 		return identificador;
@@ -37,7 +33,7 @@ public class Curso {
 	public String toString() {
 		return "Cargando alumno del curso " + identificador + descripcion + "...";
 	}
-	public Alumno[] getAlumnos() {
+	public List<Alumno> getAlumnos() {
 		return alumnos;
 	}
 }

@@ -1,23 +1,24 @@
 package Ejercicio18_19_20;
 
-import java.util.Iterator;
 import java.util.Scanner;
 
 public class App {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		String dni = "";
-		Alumno ceroUno = new Alumno(dni);
-		Alumno ceroDos = new Alumno(dni);
-		Alumno ceroTres = new Alumno(dni);
-		Curso cursoUno = new Curso(3);
+		Curso cursoUno = new Curso();
 		Boolean dniRepe = false;
 		Integer contador = 1;
 		
-		Alumno[] arrayAlumno = new Alumno[] { ceroUno, ceroDos, ceroTres };
-		for (Alumno alumno : arrayAlumno) {
+		
+		
+		
+		
+		
+		for (int i = 0; i < 3; i++) {
 			cursoUno.setIdentificador(1);
 			cursoUno.setDescripcion("DAM-DAW");
+			Alumno alumno = new Alumno(dni);
 			alumno.setCurso(cursoUno);
 			do {
 				dniRepe = false;
@@ -26,7 +27,7 @@ public class App {
 				if (!alumno.validarDNI()) {
 					System.out.println("Error los datos que has introducido en el DNI no son correctos");
 				}
-				cursoUno.addAlumno(alumno);
+				
 			} while (!alumno.validarDNI());
 			do {
 				System.out.println("Ingresa el nombre del Alumno" + contador + " mínimo 10 caracteres");
@@ -41,12 +42,14 @@ public class App {
 				}
 			} while (!alumno.validar());
 			contador++;
+			cursoUno.addAlumno(alumno);
 		}
-		if (arrayAlumno[0].equals(arrayAlumno[1]) || arrayAlumno[0].equals(arrayAlumno[2])
-				|| arrayAlumno[1].equals(arrayAlumno[2])) {
+			
+		if ( cursoUno.getAlumnos().get(0).equals(cursoUno.getAlumnos().get(1))|| cursoUno.getAlumnos().get(0).equals(cursoUno.getAlumnos().get(2))
+				|| cursoUno.getAlumnos().get(1).equals(cursoUno.getAlumnos().get(2))) {
 			System.out.println("Error los datos introducidos están repetidos.");
 		} else {
-			for (Alumno alumno : arrayAlumno) {
+			for (Alumno alumno : cursoUno.getAlumnos()) {
 				System.out.println(cursoUno);
 				System.out.println(alumno);
 				if (alumno.getNota() < 5) {
