@@ -12,11 +12,9 @@ public class Semaforo {
 		color = COLOR_ROJO;
 		parpadeando = false;
 	}
-
 	public Boolean getParpadeando() {
 		return parpadeando;
 	}
-
 	public void setParpadeando(Boolean parpadeando) {
 		if (parpadeando && this.color.equals(COLOR_AMBAR)) {
 			this.parpadeando = true;
@@ -28,22 +26,16 @@ public class Semaforo {
 			}
 		}
 	}
-
 	public String getColor() {
 		return color;
 	}
-
 	@Override
 	public String toString() {
-
 		if(parpadeando) {
 			return "Semáforo en " + color + " parpadeando";
-		}
-		
+		}	
 		return "Semáforo en " + color;
-
 	}
-
 	public void setColor(String color) {
 		if (color.equalsIgnoreCase(COLOR_ROJO) || color.equalsIgnoreCase(COLOR_VERDE)
 				|| color.equalsIgnoreCase(COLOR_AMBAR)) {
@@ -52,7 +44,6 @@ public class Semaforo {
 			System.out.println("COLOR INCORRECTO");
 		return;
 	}
-
 	public void cambiarEstado() {
 		if (this.color.equals(COLOR_ROJO)) {
 			this.color = COLOR_VERDE;
@@ -67,5 +58,4 @@ public class Semaforo {
 			}
 		}
 	}
-
 }

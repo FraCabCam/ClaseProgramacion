@@ -17,9 +17,7 @@ public class AppSemaforo {
 			semaforo.cambiarEstado();
 			System.out.println(semaforo);
 		}
-
 		System.out.println("-------------------------------------------------");
-
 		semaforo2.setColor(semaforo.getColor());
 		semaforo2.setParpadeando(semaforo.getParpadeando());
 	}
