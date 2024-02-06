@@ -6,11 +6,9 @@ public class appCarrito {
 		Cesta cestaBlas = new Cesta(blas);
 		System.out.println(cestaBlas);
 		Ropa poncho = new Ropa("Poncho",20,"XL","AZUL");
-		
 		cestaBlas.addArticulo(poncho);
 		cestaBlas.addArticulo(poncho);
 		System.out.println(cestaBlas);
-		
 		Libro nietzsche = new Libro("Así habló Zaraustra" , 15, "Nietzsche");
 		cestaBlas.addArticulo(nietzsche);
 		System.out.println(cestaBlas);
