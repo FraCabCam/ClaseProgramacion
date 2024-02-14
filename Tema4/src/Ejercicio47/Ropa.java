@@ -1,15 +1,20 @@
 package Ejercicio47;
 
+import java.math.BigDecimal;
+
 public class Ropa extends Articulo{
 	private String talla;
 	private String color;
-	public Ropa(String descripcion, Integer precio, String talla, String color) {
+	public Ropa(String descripcion, BigDecimal precio, String talla, String color) {
 		super();
 		this.descripcion = descripcion;
 		this.precio = precio;
 		this.talla = talla;
 		this.color = color;
 		
+	}
+	public Ropa(String descripcion, int i, String talla2, String color2) {
+		// TODO Auto-generated constructor stub
 	}
 	public String getTalla() {
 		return talla;

@@ -12,7 +12,7 @@ public class appCarrito {
 		Libro nietzsche = new Libro("Así habló Zaraustra" , 15, "Nietzsche");
 		cestaBlas.addArticulo(nietzsche);
 		System.out.println(cestaBlas);
-		cestaBlas.borrarArticulo(1);
+		cestaBlas.borrarArticulo(poncho);
 		System.out.println(cestaBlas);
 		System.out.println(cestaBlas.getMedia());
 		cestaBlas.vaciarCesta();

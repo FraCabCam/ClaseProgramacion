@@ -1,20 +1,26 @@
 package Ejercicio47;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
+
+
 
 public class Cesta {
 	LocalDate fechaCreacion;
 	LocalDate fechaActualizacion;
 	Cliente cliente;
-	List<Articulo> articulos;
+	HashSet<Articulo> articulos;
 	
 	
 	public Cesta(Cliente cliente) {
 		fechaCreacion = LocalDate.now();
-		articulos = new ArrayList<Articulo>();
+		articulos = new HashSet<Articulo>();
 		setFechaActualizacion();
 		this.cliente = cliente;
 	}
@@ -30,7 +36,7 @@ public class Cesta {
 	public Cliente getCliente() {
 		return cliente;
 	}
-	public List<Articulo> getArticulos() {
+	public HashSet<Articulo> getArticulos() {
 		setFechaActualizacion();
 		return articulos;
 	}
@@ -43,24 +49,20 @@ public class Cesta {
 		return 0;
 		
 	}
-	public Integer getTotal() {
-		Integer precioTotal = 0;
-		for (int i = 0; i < articulos.size(); i++) {
-			precioTotal += articulos.get(i).getPrecio();
+	public BigDecimal getTotal() {
+		BigDecimal precioTotal = BigDecimal.ZERO;
+		for (Articulo articulo : articulos) {
+			precioTotal = precioTotal.add(articulo.getPrecio());
 		}
-		return precioTotal;	
+		return precioTotal;
 	}
-	public Integer getMedia() {
-		Integer precioMedia = 0;
-		Integer precioTotal = 0;
+	public BigDecimal getMedia() {
+		
 		if (articulos.isEmpty()) {
-			return 0;
+			return BigDecimal.ZERO;
 		}
-		for (int i = 0; i < articulos.size(); i++) {
-			precioTotal += articulos.get(i).getPrecio();	
-		}
-		precioMedia = (precioTotal/(articulos.size()));
-		return precioMedia;	
+		BigDecimal cantidad = new BigDecimal(getCantidad());
+		return getTotal().divide(cantidad,2,RoundingMode.HALF_UP);	
 	}
 	@Override
 	public String toString() {
@@ -71,7 +73,7 @@ public class Cesta {
 		articulos.add(articulo);
 		setFechaActualizacion();
 	}
-	public void borrarArticulo(int articulo) {
+	public void borrarArticulo(Articulo articulo) {
 		articulos.remove(articulo);
 		setFechaActualizacion();
 	}
