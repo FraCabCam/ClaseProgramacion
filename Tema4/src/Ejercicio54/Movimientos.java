@@ -6,6 +6,9 @@ import java.time.LocalDate;
 public abstract class Movimientos {
 	protected LocalDate fechaActual;
 	protected BigDecimal importe;
+
+	
+	abstract BigDecimal operacion();
 	public LocalDate getFechaActual() {
 		return fechaActual;
 	}
@@ -19,14 +22,9 @@ public abstract class Movimientos {
 		this.importe = importe;
 	}
 	
-	public Movimientos() {
-		
-		
-	}
 	
 	public void getImporte(BigDecimal Importe) {
 		
 	}
-	
-
+	public abstract String getTipo();
 }
