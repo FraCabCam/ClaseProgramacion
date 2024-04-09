@@ -38,7 +38,7 @@ public class Geografia {
 		for (Map.Entry<String, String> entry : mapa.entrySet()) {
 			String pais = entry.getKey();
 			String capital = entry.getValue();
-			System.out.println("PAÍS: " + pais + " -" + " CAPITAL " + capital);
+			System.out.println("PAIS: " + pais + " -" + " CAPITAL " + capital);
 		}
 		
 	}
@@ -83,7 +83,7 @@ public class Geografia {
 			String capital = entry.getValue();
 			if (capital.startsWith(letra.toUpperCase())) {
 				existe = true;
-				System.out.println("PAÍS: " + pais + " -" + " CAPITAL " + capital);
+				System.out.println("PAIS: " + pais + " -" + " CAPITAL " + capital);
 			}
 		}
 		if (!existe) {
@@ -99,7 +99,7 @@ public class Geografia {
 			String capital = entry.getValue();
 			if (capital.startsWith(pais.substring(0,1))) {
 				existe = true;
-				System.out.println("PAÍS: " + pais + " -" + " CAPITAL " + capital);
+				System.out.println("PAIS: " + pais + " -" + " CAPITAL " + capital);
 			}
 		}
 		if (!existe) {
