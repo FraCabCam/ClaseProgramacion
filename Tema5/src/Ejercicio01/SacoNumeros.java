@@ -7,6 +7,8 @@ import java.util.List;
 /**Esta clase sirve para crear métodos para sacar números de una lista
  * 
  * @author fcabrera
+ * @since JDK17
+ * @version 1.0
  */
 
 public class SacoNumeros {
@@ -14,7 +16,7 @@ public class SacoNumeros {
 	private List<Integer> lista;
 	
 	/**Constructor que inicializa la lista
-	 * 
+	 * @param lista Lista de Integers para guardar los números
 	 */
 	public SacoNumeros() {
 		
@@ -33,6 +35,11 @@ public class SacoNumeros {
 	/**Método para devolver el número de la posicion que es el num que recibe
 	 * si el numero que pide está fuera del rango de la lista en vez de petar manda un null,
 	 * si no, manda directamente el número de la posición solicitada
+	 * @param num
+	 * @return <ul>
+	 * 			<li> la posición será aquella que contenga el número recibido en la lista
+	 * 			<li> si se pide un número que no esté en la lista devolverá null
+	 * 			</ul>
 	 */
 	public Integer getNumero(Integer num) {
 		
@@ -45,6 +52,9 @@ public class SacoNumeros {
 
 		return posicion;
 	}
+	/**
+	 * @return devuelve el contenido de la lista.
+	 */
 
 	public String toString() {
 
@@ -55,6 +65,12 @@ public class SacoNumeros {
 	 * Se inicializa la variable que devolvemos en 0 luego, con un bucle for
 	 * recorremos la lista, miramos si la variable vale 0 en ese caso con el metodo creado
 	 * anteriormente "getNumero" obtiene el número de la posición 0.
+	 * @param dividir, BigDecimal de una división
+	 @return <ul>
+	 * 			<li> si dividir es 0 se le añade el contenido de la posición 0 
+	 * 			<li> en caso contrario, dividir será el número que sea dividido entre el que esté en la posición que valga num (bucle) redondeado a 2
+	 * 			<li> Si peta la división devolverá 0 
+	 * 			</ul>
 	 */
 	public BigDecimal division() {
 		
