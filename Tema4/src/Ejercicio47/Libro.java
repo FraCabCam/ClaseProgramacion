@@ -14,7 +14,7 @@ public class Libro extends Articulo {
 	}
 
 	public Libro(String descripcion, int i, String autor2) {
-		// TODO Auto-generated constructor stub
+
 	}
 
 	public String getAutor() {
